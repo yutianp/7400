@@ -3,12 +3,297 @@
 <!-- The head of a web page defines it's metadata -->
 <head>
   <meta charset="utf-8">
-  <title></title>
-  <meta name="viewport" content="initial-scale=1">
-  <link rel="stylesheet" href="style.css">
+  <title>7400</title>
+  <meta name="viewport" content="width=device-width" "initial-scale=1">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="https://use.typekit.net/bok4ajc.css">
+
+  <script>
+  var vid, playbtn, seekslider, mutebtn, fullscreenbtn;
+
+  function initializePlayer(){
+    // set object references
+    vid = document.getElementById("moshedHD");
+    playbtn = document.getElementById("playpausebtn");
+    seekslider = document.getElementById("seekslider");
+    mutebtn = document.getElementById("mutebtn");
+    fullscreenbtn = document.getElementById("fullscreenbtn");
+    // add event listeners
+    playbtn.addEventListener("click", playPause, false);
+    seekslider.addEventListener("change", vidSeek, false);
+    vid.addEventListener("timeupdate", seektimeupdate, false);
+    mutebtn.addEventListener("click", vidmute, false);
+    fullscreenbtn.addEventListener("click", toggleFullScreen, false);
+  }
+  window.onload = initializePlayer;
+
+  function playPause (){
+
+    if(vid.paused){
+      vid.play();
+      playbtn.innerHTML = "PAUSE";
+    } else {
+      vid.pause();
+      playbtn.innerHTML = "PLAY";
+    }
+  }
+  function vidSeek(){
+    var seekto = vid.duration * (seekslider.value / 100);
+    vid.currentTime = seekto;
+  }
+  function seektimeupdate(){
+    var nt = vid.currentTime * (100 / vid.duration);
+    seekslider.value = nt;
+  }
+  function vidmute(){
+    if(vid.muted){
+      vid.muted = false;
+      mutebtn.innerHTML = "MUTE";
+    } else {
+      vid.muted = true;
+      mutebtn.innerHTML = "UNMUTE";
+    }
+  }
+  function toggleFullScreen(){
+    if(vid.requestFullScreen){
+        vid.requestFullScreen();
+    } else if(vid.webkitRequestFullScreen){
+        vid.webkitRequestFullScreen();
+    } else if(vid.mozRequestFullScreen){
+        vid.mozRequestFullScreen();
+    }
+  }
+  </script>
 </head>
 <!-- The body is the container for a web page's content.  -->
 <body>
-  Hello World!
+
+<!--  <div class="enter">
+    <button class="enter-button">ENTER</button>
+  </div>
+-->
+  <div class="textContainer">
+    <h1 class=GROUPB>GROUP B</h1>
+    <div class="row">
+      <div class="column one">
+        <p id="B-12">
+          CLASS B-12
+          <br>Audi Quattro A2
+          <br><span class="quattro">Audi Sport Quattro S1 E2</span><img src="gifs/dLGIrDr - Imgur.gif" class="portugal"></img>
+          <br>Citroën BX 4TC
+          <br><span class="ford">Ford RS200</span><img src="gifs/767SS2q.gif" class="crash"></img>
+          <br><span class="lancia">Lancia Rallye 037</span><img src="gifs/ef07a4d114eb7f91b70484951989f84b.gif" class="drift"></img>
+          <br>Lancia Delta S4
+          <br>Mazda RX-7 FB
+          <br>MG Metro 6R4
+          <br>Nissan 240RS
+          <br>Opel Manta B 400
+          <br><span class="peugeot">Peugeot 205 Turbo 16</span><img src="gifs/crowd-close-to-rallye-track.gif" class="slide"></img>
+          <br>Porsche 911 SC RS
+          <br>Renault 5 Maxi Turbo
+          <br>Toyota Celica TwinCam Turbo
+        </p>
+      </div>
+
+      <div class="column two">
+        <p id=B-9-11>
+          CLASS B-9, B-10, B-11
+          <br>Citroën Visa & Mille Pistes
+          <br>Daihatsu Charade 926T
+          <br>FSO Polonez 2000 Rally
+          <br>Lada 2105 VFTS
+          <br>Renault 5 Turbo
+          <br>Škoda 130 LR
+          <br>Subaru MP-1 Utility
+          <br>Talbot Samba Rallye
+        </p>
+
+      </div>
+
+      <div class="column three">
+        <p id="GROUP4">
+          GROUP 4 TRANSFERS
+          <br>Alfa Romeo Alfetta Turbodelta
+          <br>Audi Quattro A1
+          <br>BMW M1 Rallye
+          <br>Ferrari 308 GTB
+          <br>Ford Escort RS2000
+          <br>Mitsubishi Lancer 2000 Turbo
+          <br>Opl Ascona B 400
+          <br>Porsche 924 GTS
+          <br>Renault 5 Turbo
+          <br>Renault Alpine A310 V6
+          <br>Talbot Sunbeam Lotus
+          <br>Vauxhall Chevette 2300 HSR
+        </p>
+      </div>
+
+      <div class="column four">
+        <p id="locations">
+          RACE LOCATIONS
+          <br>1982
+          <br>Monte Carlo
+          <br>Sweden
+          <br>Portugal
+          <br>Safari (Kenya)
+          <br>Tour de Corse (France)
+          <br>Acropolis (Greece)
+          <br>New Zealand
+          <br>Brazil
+          <br>1000 Lakes (Finland)
+          <br>Sanremo (Italy)
+          <br>Côte d’Ivoire
+          <br>RAC (Great Britain)
+          <br>
+          <br>1983
+          <br>Monte Carlo
+          <br>Sweden
+          <br>Portugal
+          <br>Safari (Kenya)
+          <br>Tour de Corse (France)
+          <br>Acropolis (Greece)
+          <br>New Zealand
+          <br>Argentina
+          <br>1000 Lakes (Finland)
+          <br>Sanremo (Italy)
+          <br>Côte d’Ivoire
+          <br>RAC (Great Britain)
+          <br>
+          <br>1984
+          <br>Monte Carlo
+          <br>Sweden
+          <br>Portugal
+          <br>Safari (Kenya)
+          <br>Tour de Corse (France)
+          <br>Acropolis (Greece)
+          <br>New Zealand
+          <br>Argentina
+          <br>1000 Lakes (Finland)
+          <br>Sanremo (Italy)
+          <br>Côte d’Ivoire
+          <br>RAC (Great Britain)
+          <br>
+          <br>1984
+          <br>Monte Carlo
+          <br>Sweden
+          <br>Portugal
+          <br>Safari (Kenya)
+          <br>Tour de Corse (France)
+          <br>Acropolis (Greece)
+          <br>New Zealand
+          <br>Argentina
+          <br>1000 Lakes (Finland)
+          <br>Sanremo (Italy)
+          <br>Côte d’Ivoire
+          <br>RAC (Great Britain)
+          <br>
+          <br>1985
+          <br>Monte Carlo
+          <br>Sweden
+          <br>Portugal
+          <br>Safari (Kenya)
+          <br>Tour de Corse (France)
+          <br>Acropolis (Greece)
+          <br>New Zealand
+          <br>Argentina
+          <br>1000 Lakes (Finland)
+          <br>Sanremo (Italy)
+          <br>Côte d’Ivoire
+          <br>RAC (Great Britain)
+          <br>
+          <br>1986
+          <br>Monte Carlo
+          <br>Sweden
+          <br>Portugal
+          <br>Safari (Kenya)
+          <br>Tour de Corse (France)
+          <br>Acropolis (Greece)
+          <br>New Zealand
+          <br>Argentina
+          <br>1000 Lakes (Finland)
+          <br>Sanremo (Italy)
+          <br>Côte d’Ivoire
+          <br>RAC (Great Britain)
+          <br>Olympus (USA)
+
+    </div>
+    <div class="column five">
+      <p id="drivers">
+          DRIVERS
+          <br>Markku Alén
+          <br>Rauno Aaltonen
+          <br>Alain Ambrosino
+          <br>Jean-Claude Andruet
+          <br><span class="rohrl">Walter Röhrl</span><img src="gifs/Walter_Rörhl.gif" class="footwork"></img>
+          <br>Pentti Airikkala
+          <br>Bernard Béguin
+          <br><span class="bettega">Attilio Bettega</span><img src="gifs/EAiT.gif" class="jump"></img>
+          <br>Massimo Biasion
+          <br>Stig Blomqvist
+          <br>John Buffum
+          <br>François Chatriot
+          <br>Ingvar Carlsson
+          <br>Dario Cerrato
+          <br>Per Eklund
+          <br>Kalle Grundel
+          <br>Juha Kankkunen
+          <br>Mike Kirkland
+          <br>Lasse Lampi
+          <br>Jimmy McRae
+          <br>Shekhar Mehta
+          <br>Hannu Mikkola
+          <br>Joaquim Moutinho
+          <br>Michèle Mouton
+          <br>Tony Pond
+          <br>Jean Ragnotti
+          <br>Jorge Recalde
+          <br>Bruno Saby
+          <br>Timo Salonen
+          <br>Fabrizio Tabaton
+          <br>Jean-Luc Thérier
+          <br>Henri Toivonen
+          <br>Lars-Erik Torph
+          <br>Ari Vatanen
+          <br>Adartico Vudafieri
+          <br>Bijörn Waldegård
+          <br>Erwin Weber
+          <br>Wilfred Wiedner
+          <br>Malcolm Wilson
+          <br>Franz Wittmann
+      </p>
+
+  </div>
+
+  <div class="column six">
+    <p id="manufacturers">
+          MANUFACTURERS
+          <br>Austin Rover World Championship Team
+          <br><span class="sport">Audi Sport</span><img src="gifs/1514989960_Gruppe B.gif" class="crowd"></img>
+          <br>Citröen Compétitions
+          <br>Ford Rallye Sport (Team RS)
+          <br><span class="martini">Lancia Martini Racing</span><img src="gifs/main-qimg-6519b9a3130eda938acaecf0711ce64a.gif" class="flying"></img>
+          <br>Mazda Rally Team Europe
+          <br>Nissan Team Europe
+          <br>Opel Motorsport (Euro Team)
+          <br><span class="talbot">Peugeot Talbot Sport</span><img src="gifs/6513fb8c866cbb600d56fa4900ff6dbe.gif" class="hairpin"></img>
+          <br>Porsche Rothmans Rally Team
+          <br>Renault Sport Elf Philips
+          <br>Toyota Team Europe
+    </p>
+  </div>
+
+  <div class="videoContainer">
+     <video id="moshedHD" autoplay onclick="this.paused ? this.play() : this.pause();">
+       <source src="video/moshedHD.mp4" type="video/mp4">
+       <source src="video/moshedHD.ogg" type="video/ogg">
+     </video>
+      <div id="videoControlBar">
+        <button id="playpausebtn">PAUSE</button>
+        <input id="seekslider" type="range" min="0" max="100" value="0" step="1">
+        <button id="mutebtn">MUTE</button>
+        <button id="fullscreenbtn">FULLSCREEN</button>
+      </div>
+ </div>
+
 </body>
 </html>
